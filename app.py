@@ -12,9 +12,13 @@ def index():
     table = ''
     name=''
     img=''
-
-    if path is not None:
-        df = pd.read_csv(path) 
+    
+    if  request.method == 'POST':
+        # <input type="file" id="myfile" name="csv_file"><br><br>
+        # use name from input tag to upload file
+        file = request.files['csv_file']
+        name = file.filename
+        df = pd.read_csv(file) 
         table = fn.table_html_view(df)
         img = fn.create_base64(df)
 
