@@ -1,11 +1,15 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+
 import io
 import base64
 
 
 def create_base64(df):
+    import matplotlib
+    matplotlib.use('Agg')
     fig, ax = plt.subplots()
+    fig.patch.set_facecolor('#eaeaea')  # Jasnoszary
+
     ax.plot(df.iloc[:, 0], df.iloc[:, 1], '*r')
     ax.set(xlabel='x', ylabel='y', title='CSV Data Plot')
 
@@ -14,7 +18,6 @@ def create_base64(df):
     fig.savefig(img, format='png')
     img.seek(0)
     return base64.b64encode(img.getvalue()).decode('utf8')
-
 
 
 def table_html_view(df):
@@ -33,5 +36,3 @@ def table_html_view(df):
                                     notebook=True
                                     )
     return reprezentation
-        
-

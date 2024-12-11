@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+    color: #343a40;
+}
+
+form {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+input[type="file"] {
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+input[type="submit"],
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+/* Wyśrodkowanie tabeli */
+table {
+    margin: 20px auto;
+    border-collapse: collapse; /* Scalanie granic */
+    width: auto; /* Automatyczna szerokość dostosowana do zawartości */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lekki cień */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: auto; /* Kolumny automatycznie dopasowane do zawartości */
+}
+
+/* Nagłówki tabeli */
+table th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+    white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+}
+
+/* Wiersze tabeli */
+table td {
+    padding: 6px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+}
+
+/* Naprzemienne kolory wierszy */
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Nagłówek sekcji tabeli */
+h3 {
+    text-align: center;
+    margin: 20px auto;
+    color: #343a40;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
