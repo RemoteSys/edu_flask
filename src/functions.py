@@ -6,7 +6,7 @@ import base64
 
 def create_base64(df):
     fig, ax = plt.subplots()
-    ax.plot(df['x'], df['y'], '*r')
+    ax.plot(df.iloc[:, 0], df.iloc[:, 1], '*r')
     ax.set(xlabel='x', ylabel='y', title='CSV Data Plot')
 
     # save as base64
