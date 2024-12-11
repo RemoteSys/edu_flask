@@ -5,11 +5,16 @@
   </head>
 
 <body>
+  <form action="/">
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile"><br><br>
+    <input type="submit" value="Submit">
+  </form>
   
   <h3>{{ name }}</h3>
       {{ table | safe }}
       
-      <img src="data:image/png;base64,{{ img64base }}" />
+  <img src="data:image/png;base64,{{ img64base }}" />
   
 </body>
 </html>
