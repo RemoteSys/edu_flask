@@ -1,20 +1,24 @@
+/* Ogólne style dla ciała dokumentu */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     margin: 20px;
     color: #343a40;
+    line-height: 1.6;
 }
 
+/* Styl formularzy */
 form {
     background-color: #ffffff;
     border: 1px solid #dee2e6;
     border-radius: 8px;
     padding: 20px;
     max-width: 400px;
-    margin: 10px auto;
+    margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Styl dla etykiet */
 label {
     font-weight: bold;
     display: block;
@@ -22,15 +26,21 @@ label {
     color: #495057;
 }
 
-input[type="file"] {
-    margin-bottom: 15px;
+/* Pola wejściowe */
+input[type="file"],
+input[type="text"],
+select {
     display: block;
     width: 100%;
     padding: 8px;
+    margin-bottom: 15px;
     border: 1px solid #ced4da;
     border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
+/* Przyciski */
 input[type="submit"],
 button {
     background-color: #007bff;
@@ -41,6 +51,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover,
@@ -48,30 +59,42 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Nagłówki */
 h3 {
     text-align: center;
     margin-top: 20px;
+    color: #343a40;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+/* Obrazki */
 img {
     display: block;
     margin: 20px auto;
-    max-width: 90%;
+    max-width: 100%;
     border-radius: 8px;
     border: 1px solid #ced4da;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Wyśrodkowanie tabeli */
+/* Styl dla kontenera wykresu */
+.chart-container {
+    text-align: center;
+}
+
+/* Tabela */
 table {
     margin: 20px auto;
-    border-collapse: collapse; /* Scalanie granic */
-    width: auto; /* Automatyczna szerokość dostosowana do zawartości */
+    border-collapse: collapse;
+    width: 90%;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lekki cień */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #dee2e6;
     border-radius: 8px;
     overflow: hidden;
-    table-layout: auto; /* Kolumny automatycznie dopasowane do zawartości */
+    table-layout: auto;
 }
 
 /* Nagłówki tabeli */
@@ -79,32 +102,22 @@ table th {
     background-color: #007bff;
     color: white;
     text-align: left;
-    padding: 8px;
+    padding: 10px;
     font-size: 14px;
-    white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+    white-space: nowrap;
 }
 
 /* Wiersze tabeli */
 table td {
-    padding: 6px;
+    padding: 10px;
     border: 1px solid #dee2e6;
     text-align: left;
     font-size: 13px;
-    white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+    white-space: nowrap;
 }
 
 /* Naprzemienne kolory wierszy */
 table tr:nth-child(even) {
     background-color: #f8f9fa;
-}
-
-/* Nagłówek sekcji tabeli */
-h3 {
-    text-align: center;
-    margin: 20px auto;
-    color: #343a40;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 

@@ -1,43 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-    <!-- Dodanie pliku CSS -->
-    <link rel="stylesheet" type="text/css" href="/static/gptchat_style.css">
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+  <link rel="stylesheet" type="text/css" href="/static/gptchat_style.css">
+</head>
+<body>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="csv_file">
+    <input type="submit" value="Submit">
+  </form>
 
-  <body>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-      <label for="myfile">Select a file:</label>
-      <input type="file" id="myfile" name="csv_file">
-      <input type="submit" value="Submit">
-    </form>
-    
-    <h3>{{ name }}</h3>
-    {{ table | safe }}
-    
-    <form action="/chart" method="POST">
-      <div>
-        <label>Put columns numbers</label>
-        <input type="text" name="columns" id="columns">
-      </div>
-      <div)
-        <label>Select chart type</label>
-        <select name="chart_type" id="chart_type">
-          <option value="points">Scatter plot</option>
-          <option value="lines">Line plot</option>
-          <option value="bars">Bar plot</option>
-          <option value="histogram">Histogram</option>
-        </select>
-      </div>
-      <div>
-        <button type="submit" name="chart" value="plot">Create chart</button>
-      </div>
-    </form>
-    
-    {% if img64base %}
-      <img src="data:image/png;base64,{{ img64base }}">
-    {% endif %}
-  </body>
+  <h3>{{ name }}</h3>
+  {{ table | safe }}
+
+  <form action="/chart" method="POST">
+    <div>
+      <label for="columns">Put columns numbers:</label>
+      <input type="text" name="columns" id="columns">
+    </div>
+    <div>
+      <label for="chart_type">Select chart type:</label>
+      <select name="chart_type" id="chart_type">
+        <option value="points">Scatter plot</option>
+        <option value="lines">Line plot</option>
+        <option value="bars">Bar plot</option>
+        <option value="histogram">Histogram</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" name="chart" value="plot">Create chart</button>
+    </div>
+  </form>
+
+  {% if img64base %}
+  <div class="chart-container">
+    <img src="data:image/png;base64,{{ img64base }}" alt="Generated chart">
+  </div>
+  {% endif %}
+</body>
 </html>
 
