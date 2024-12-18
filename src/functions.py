@@ -4,14 +4,28 @@ import io
 import base64
 
 
-def create_base64(df):
+def create_base64(df, columns: list[int], chart_type: str):
     import matplotlib
     matplotlib.use('Agg')
     fig, ax = plt.subplots()
     fig.patch.set_facecolor('#eaeaea')  # Jasnoszary
 
-    ax.plot(df.iloc[:, 0], df.iloc[:, 1], '*r')
-    ax.set(xlabel='x', ylabel='y', title='CSV Data Plot')
+    if len(columns) == 2:
+        i, j = columns
+    else:
+        i = columns
+
+    if chart_type == 'points':
+        ax.plot(df.iloc[:, i], df.iloc[:, j], '*r')
+        ax.set(xlabel='x', ylabel='y', title='CSV Data Plot')
+    elif chart_type == 'lines':
+        ax.plot(df.iloc[:, i], df.iloc[:, j])
+        ax.set(xlabel='x', ylabel='y', title='CSV Data Plot')
+    elif chart_type == 'bars':
+        ax.bar(df.iloc[:, i], df.iloc[:, j])
+    elif chart_type == 'histogram':
+        ax.hist(df.iloc[:, i])
+
 
     # save as base64
     img = io.BytesIO()

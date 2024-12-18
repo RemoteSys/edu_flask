@@ -57,7 +57,12 @@ def create_chart():
         df = pd.read_json(tmp)
         name = session['name']
         table = session['table']
-        img = fn.create_base64(df)
+
+        columns = request.form['columns']
+        columns = [int(i) for i in columns.split(',')]
+        chart_type = request.form['chart_type'] 
+
+        img = fn.create_base64(df, columns, chart_type)
 
     return render_template('index.html',
                            name=name,

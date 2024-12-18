@@ -17,7 +17,22 @@
     {{ table | safe }}
     
     <form action="/chart" method="POST">
-      <button type="submit" name="chart" value="plot">Create chart</button>
+      <div>
+        <label>Put columns numbers</label>
+        <input type="text" name="columns" id="columns">
+      </div>
+      <div)
+        <label>Select chart type</label>
+        <select name="chart_type" id="chart_type">
+          <option value="points">Scatter plot</option>
+          <option value="lines">Line plot</option>
+          <option value="bars">Bar plot</option>
+          <option value="histogram">Histogram</option>
+        </select>
+      </div>
+      <div>
+        <button type="submit" name="chart" value="plot">Create chart</button>
+      </div>
     </form>
     
     {% if img64base %}
